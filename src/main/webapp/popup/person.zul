@@ -5,11 +5,11 @@
 	<grid width="400px">
 		<rows>
 			<row vflex="1">
-				First Name: <textbox id="tbFirstName" hflex="true" vflex="true" value="@{personsinst.person.firstName }" />
+				First Name: <textbox id="tbFirstName" hflex="true" vflex="true" value="@{personsinst.bean.firstName }" />
 			</row>
 			<row vflex="1">
 				Last Name: 
-				<textbox id="tbLastName" hflex="true" vflex="true" value="@{personsinst.person.lastName}" />
+				<textbox id="tbLastName" hflex="true" vflex="true" value="@{personsinst.bean.lastName}" />
 			</row>
 			<row vflex="1">
 				Submit:

@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import me.timothyclare.zkpopupexample.bean.Person;
-import me.timothyclare.zkpopupexample.bean.sharer.AbstractPersonSharer;
-import me.timothyclare.zkpopupexample.bean.sharer.PersonSharer;
+import me.timothyclare.zkpopupexample.bean.sharer.AbstractGenericSharer;
+import me.timothyclare.zkpopupexample.bean.sharer.GenericSharer;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
@@ -36,7 +36,7 @@ public class MainController extends GenericForwardComposer {
 		//here we assume it will not be null, could be though so needs to be checked
 		final DataBinder binder = (DataBinder)objBinder;
 		
-		PersonSharer personsharer = new AbstractPersonSharer() {
+		GenericSharer<Person> personsharer = new AbstractGenericSharer<Person>() {
 
 			@Override
 			public void update() {
@@ -45,9 +45,9 @@ public class MainController extends GenericForwardComposer {
 			
 		};
 		
-		personsharer.setPerson(_person);
+		personsharer.setBean(_person);
 		
-		Map<String, PersonSharer> args = new HashMap<String, PersonSharer>();
+		Map<String, GenericSharer<Person>> args = new HashMap<String, GenericSharer<Person>>();
 		args.put("personsharer", personsharer);
 		
 		Component component = Executions.createComponents(popupLocation, null, args);
