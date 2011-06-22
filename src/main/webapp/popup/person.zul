@@ -1,19 +1,21 @@
 
 <window id="EventBooking" title="Event Booking" border="normal"
-	mode="popup" visible="false">
+	mode="modal" visible="false">
 	<custom-attributes personsinst="${arg.personsharer}"/>
 	<grid width="400px">
 		<rows>
 			<row vflex="1">
-				First Name: <textbox id="tbFirstName" hflex="true" vflex="true" value="@{personsinst.bean.firstName }" />
+				First Name: <textbox id="tbFirstName" hflex="true" vflex="true" value="@{personsinst.bean.firstName, save-when='btnSave.onClick' }" />
 			</row>
 			<row vflex="1">
 				Last Name: 
-				<textbox id="tbLastName" hflex="true" vflex="true" value="@{personsinst.bean.lastName}" />
+				<textbox id="tbLastName" hflex="true" vflex="true" value="@{personsinst.bean.lastName, save-when='btnSave.onClick'}" />
 			</row>
-			<row vflex="1">
-				Submit:
-				<button id="btnClose" label="Close" hflex="true" vflex="true" onClick="personsinst.update();EventBooking.detach();" />
+			<row vflex="1" spans="2">
+				<vlayout>
+					<button id="btnSave" label="Save" hflex="true" vflex="true" onClick="personsinst.update();" />
+					<button id="btnClose" label="Close" hflex="true" vflex="true" onClick="EventBooking.detach();" />
+				</vlayout>
 			</row>
 		</rows>
 	</grid>

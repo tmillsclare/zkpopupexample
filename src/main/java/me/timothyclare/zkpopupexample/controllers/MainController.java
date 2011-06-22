@@ -19,7 +19,7 @@ public class MainController extends GenericForwardComposer {
 	private static final long serialVersionUID = -4714208477741689442L;
 	private static final String popupLocation = "popup/person.zul";
 	
-	private Person _person = new Person("Example", "Person", 26);
+	private Person _person = new Person("Example", "Person");
 	
 	public Person getPerson() {
 		return _person;
