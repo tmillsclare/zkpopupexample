@@ -1,0 +1,18 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<zk>
+	<grid id="grdPerson" width="400px" apply="me.timothyclare.zkpopupexample.controllers.MainController">
+		<rows>
+			<row vflex="1">
+				First Name: <label id="tbFirstName" hflex="true" vflex="true" value="@{grdPerson$composer.person.firstName}" />
+			</row>
+			<row vflex="1">
+				Last Name: 
+				<label id="tbLastName" hflex="true" vflex="true" value="@{grdPerson$composer.person.lastName}" />
+			</row>
+			<row vflex="1">
+				Submit:
+				<button id="btnEdit" label="Edit" hflex="true" vflex="true" />
+			</row>
+		</rows>
+	</grid>
+</zk>
