@@ -13,8 +13,8 @@
 			</row>
 			<row vflex="1" spans="2">
 				<vlayout>
-					<button id="btnSave" label="Save" hflex="true" vflex="true" onClick="personsinst.update();" />
-					<button id="btnClose" label="Close" hflex="true" vflex="true" onClick="EventBooking.detach();" />
+					<button id="btnSave" label="Save" hflex="true" vflex="true" onClick="personsinst.update();EventBooking.detach();" />
+					<button id="btnCancel" label="Cancel" hflex="true" vflex="true" onClick="EventBooking.detach();" />
 				</vlayout>
 			</row>
 		</rows>
